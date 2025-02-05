@@ -1,8 +1,11 @@
 services:
-  db:
-    build: ./.docker/mongodb
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
+  database:
+    image: bitnami/mongodb:latest
+    restart: always
     ports:
       - 27017:27017
+    environment:
+      MONGODB_ROOT_PASSWORD: example
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_REPLICA_SET_KEY: 123456
+      MONGODB_DATABASE: routes
