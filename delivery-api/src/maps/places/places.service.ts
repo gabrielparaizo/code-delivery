@@ -4,7 +4,8 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class PlacesService {
   constructor(
-    private googleMapsClient: GoogleMapsClient, private configService: ConfigService) { }
+    private googleMapsClient: GoogleMapsClient,
+    private configService: ConfigService) { }
   async findPlaces(text: string) {
     const { data } = await this.googleMapsClient.findPlaceFromText({
       params: {
