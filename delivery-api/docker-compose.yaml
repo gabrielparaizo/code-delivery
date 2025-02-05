@@ -6,7 +6,9 @@ services:
       - 3000:3000
     volumes:
       - .:/home/node/app
-  database:
+    depends_on:
+      - db
+  db:
     image: bitnami/mongodb:latest
     restart: always
     ports:
