@@ -6,6 +6,6 @@ export class PlacesController {
   constructor(private readonly placesService: PlacesService) { }
   @Get()
   findPlaces(@Query('text') text: string) {
-    return this.placesService.findPlaces('text')
+    return this.placesService.findPlaces(text)
   }
 }
