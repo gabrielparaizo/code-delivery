@@ -4,7 +4,6 @@ import { RoutesController } from './routes.controller';
 import { PrismaModule } from 'src/prisma/prisma.module';
 
 @Module({
-  imports: [PrismaModule],
   controllers: [RoutesController],
   providers: [RoutesService],
 })
